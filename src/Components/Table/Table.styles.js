@@ -1,23 +1,22 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from "@mui/styles";
+import { colors } from "../../utils/colors";
 
 export const generalStyles = makeStyles((theme) => ({
   table: {
-    boxShadow: ' 0px 0px 10px #000',
+    boxShadow: " 0px 0px 10px #000",
     padding: 10,
-    textAlign: 'center',
+    textAlign: "center",
   },
   header: {
-    marginLeft: 10,
-    marginRight: 10,
-    fontSize: 30,
-    fontWeight: 700,
-    backgroundColor: 'lightgrey',
-  },
-  row: {
-    marginLeft: 10,
-    marginRight: 10,
     fontSize: 20,
-    fontWeight: 300,
-    backgroundColor: 'aliceblue',
+    fontWeight: 700,
+    backgroundColor: colors.ORANGE,
+    color: colors.WHITE,
+  },
+  headerLeft: {
+    textAlign: "left",
+  },
+  headerCenter: {
+    textAlign: "center",
   },
 }));

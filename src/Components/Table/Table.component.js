@@ -1,39 +1,48 @@
-import React from 'react';
-import { generalStyles } from './Table.styles';
-import { Grid } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { generalStyles } from "./Table.styles";
+import { Grid } from "@mui/material";
+import Row from "../Row/Row.component";
+import ApiRequest from "../../Services/api";
 
-const header = ['', 'Player', 'Age', 'Nationality', 'Position', 'Team'];
-
-const player = [
-  'foto',
-  'Neymar',
-  '34',
-  'Brazilian',
-  'Attacker',
-  'Paris Saint Germain',
+const header = [
+  "Name",
+  "Family",
+  "Carbohydrates",
+  "Protein",
+  "Calories",
+  "Sugar",
 ];
 
 export default function Table() {
   const styles = generalStyles();
+  const [dataFetch, setDataFetch] = useState([]);
+
+  useEffect(() => {
+    ApiRequest().then((resp) => {
+      setDataFetch(resp);
+    });
+  }, []);
+
   return (
-    <Grid container xs={12} className={styles.table}>
-      {header.map((title) => {
+    <Grid container className={styles.table}>
+      {header.map((title, index) => {
         return (
           <>
-            <Grid item className={styles.header} xs={2}>
+            <Grid
+              item
+              className={`${
+                index < 2 ? styles.headerLeft : styles.headerCenter
+              } ${styles.header}`}
+              xs={2}
+              key={index}
+            >
               {title}
             </Grid>
           </>
         );
       })}
-      {player.map((title) => {
-        return (
-          <>
-            <Grid item xs={2} className={styles.row}>
-              {title}
-            </Grid>
-          </>
-        );
+      {dataFetch.map((data, index) => {
+        return <Row data={data} index={index} />;
       })}
     </Grid>
   );
