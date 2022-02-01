@@ -26,7 +26,7 @@ export default function Table(props) {
   return (
     <Grid
       container
-      className={`${styles.table} ${width < 700 ? styles.p1 : styles.p20}`}
+      className={`${styles.table} ${width < 600 ? styles.p1 : styles.p20}`}
     >
       {header.map((title, index) => {
         return (

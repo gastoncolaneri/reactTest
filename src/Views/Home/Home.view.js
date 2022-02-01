@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Switch from '@mui/material/Switch';
 import Table from '../../Components/Table/Table.component';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { generalStyles } from './Home.styles';
@@ -16,16 +16,24 @@ export default function Home() {
   return (
     <Grid
       style={{
-        backgroundColor: !checked ? '#fff' : '#181818',
+        backgroundColor: !checked ? colors.WHITE : colors.BLACKDARKMODE,
         padding: width < 400 ? 5 : 10,
         flex: 1,
       }}
     >
+      <Typography
+        variant="h3"
+        className={`${styles.title} ${
+          !checked ? styles.titleDarkGrey : styles.titleGrey
+        }`}
+      >
+        FRUIT INFORMATION
+      </Typography>
       <Switch
         checked={checked}
         onChange={() => setChecked(!checked)}
         size="medium"
-        className={`${width < 700 ? styles.ml1 : styles.ml20}`}
+        className={`${width < 600 ? styles.ml1 : styles.ml20}`}
         sx={{
           overflow: 'visible',
           width: 50,
@@ -47,7 +55,7 @@ export default function Home() {
         checkedIcon={
           <WbSunnyIcon
             style={{
-              color: '#faad35',
+              color: colors.ORANGE,
               marginTop: -16,
               fontSize: 35,
               marginLeft: 0,

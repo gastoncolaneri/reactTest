@@ -1,5 +1,5 @@
+import React from 'react';
 import { Grid } from '@mui/material';
-import React, { useEffect } from 'react';
 import { generalStyles } from './Row.styles';
 import Dimensions from '../../utils/dimensions';
 
