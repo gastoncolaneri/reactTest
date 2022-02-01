@@ -4,6 +4,9 @@ import Table from '../../Components/Table/Table.component';
 import { Grid, Typography } from '@mui/material';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import Logo from '../../assets/logo.png';
 import { generalStyles } from './Home.styles';
 import { colors } from '../../utils/colors';
 import Dimensions from '../../utils/dimensions';
@@ -21,14 +24,20 @@ export default function Home() {
         flex: 1,
       }}
     >
-      <Typography
-        variant="h3"
-        className={`${styles.title} ${
-          !checked ? styles.titleDarkGrey : styles.titleGrey
-        }`}
+      <Stack
+        direction="row"
+        spacing={2}
+        className={styles.titleBox}
+        sx={{ marginBottom: 2 }}
       >
-        FRUIT INFORMATION
-      </Typography>
+        <Avatar alt="Logo" src={Logo} sx={{ width: 70, height: 70 }} />
+        <Typography
+          variant={width < 600 ? 'h6' : 'h4'}
+          className={!checked ? styles.titleDarkGrey : styles.titleGrey}
+        >
+          FRUIT INFORMATION
+        </Typography>
+      </Stack>
       <Switch
         checked={checked}
         onChange={() => setChecked(!checked)}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { generalStyles } from './Table.styles';
 import { Grid } from '@mui/material';
-import Row from '../Row/Row.component';
+import Rows from '../Rows/Rows.component';
 import ApiRequest from '../../Services/api';
 import Loader from '../Loader/Loader.component';
 import Dimensions from '../../utils/dimensions';
@@ -47,7 +47,7 @@ export default function Table(props) {
         );
       })}
       {dataFetch.map((data, index) => {
-        return <Row data={data} index={index} switcher={switcher} />;
+        return <Rows data={data} index={index} switcher={switcher} />;
       })}
       <Loader open={openLoader} />
     </Grid>
