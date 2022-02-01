@@ -4,6 +4,7 @@ export const generalStyles = makeStyles((theme) => ({
   row: {
     paddingTop: 5,
     paddingBottom: 5,
+    paddingLeft: 5,
     fontWeight: 300,
   },
   rowWhite: {
@@ -11,6 +12,14 @@ export const generalStyles = makeStyles((theme) => ({
   },
   rowGrey: {
     backgroundColor: colors.GREY,
+  },
+  rowBlack: {
+    backgroundColor: colors.BLACKDARKMODE,
+    color: "#fff",
+  },
+  rowDarkGrey: {
+    backgroundColor: colors.GREYDARKMODE,
+    color: "#fff",
   },
   rowText: {
     textAlign: "left",

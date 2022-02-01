@@ -3,14 +3,16 @@ import React, { useEffect } from "react";
 import { generalStyles } from "./Row.styles";
 export default function Row(props) {
   const styles = generalStyles();
-  const { data, index } = props;
+  const { data, index, switcher } = props;
 
   return (
     <>
       <Grid
         item
         className={`${
-          parseInt(index) % 2 == 0 ? styles.rowWhite : styles.rowGrey
+          index % 2 == 0
+            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [switcher ? styles.rowGrey : styles.rowBlack]
         } ${styles.row} ${styles.rowText}`}
         xs={2}
       >
@@ -19,7 +21,9 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          parseInt(index) % 2 == 0 ? styles.rowWhite : styles.rowGrey
+          index % 2 == 0
+            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [switcher ? styles.rowGrey : styles.rowBlack]
         } ${styles.row} ${styles.rowText}`}
         xs={2}
       >
@@ -28,7 +32,9 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          parseInt(index) % 2 == 0 ? styles.rowWhite : styles.rowGrey
+          index % 2 == 0
+            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [switcher ? styles.rowGrey : styles.rowBlack]
         } ${styles.row} ${styles.rowNumber}`}
         xs={2}
       >
@@ -37,7 +43,9 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          parseInt(index) % 2 == 0 ? styles.rowWhite : styles.rowGrey
+          index % 2 == 0
+            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [switcher ? styles.rowGrey : styles.rowBlack]
         } ${styles.row} ${styles.rowNumber}`}
         xs={2}
       >
@@ -46,7 +54,9 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          parseInt(index) % 2 == 0 ? styles.rowWhite : styles.rowGrey
+          index % 2 == 0
+            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [switcher ? styles.rowGrey : styles.rowBlack]
         } ${styles.row} ${styles.rowNumber}`}
         xs={2}
       >
@@ -55,7 +65,9 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          parseInt(index) % 2 == 0 ? styles.rowWhite : styles.rowGrey
+          index % 2 == 0
+            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [switcher ? styles.rowGrey : styles.rowBlack]
         } ${styles.row} ${styles.rowNumber}`}
         xs={2}
       >

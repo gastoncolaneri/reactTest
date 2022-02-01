@@ -3,15 +3,15 @@ import { colors } from "../../utils/colors";
 
 export const generalStyles = makeStyles((theme) => ({
   table: {
-    boxShadow: " 0px 0px 10px #000",
-    padding: 10,
+    padding: "2%",
     textAlign: "center",
   },
   header: {
     fontSize: 20,
     fontWeight: 700,
-    backgroundColor: colors.ORANGE,
+    backgroundColor: colors.DARKGREY,
     color: colors.WHITE,
+    paddingLeft: 5,
   },
   headerLeft: {
     textAlign: "left",

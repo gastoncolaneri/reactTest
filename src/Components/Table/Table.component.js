@@ -13,7 +13,8 @@ const header = [
   "Sugar",
 ];
 
-export default function Table() {
+export default function Table(props) {
+  const { switcher } = props;
   const styles = generalStyles();
   const [dataFetch, setDataFetch] = useState([]);
 
@@ -42,7 +43,7 @@ export default function Table() {
         );
       })}
       {dataFetch.map((data, index) => {
-        return <Row data={data} index={index} />;
+        return <Row data={data} index={index} switcher={switcher} />;
       })}
     </Grid>
   );
