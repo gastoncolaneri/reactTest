@@ -1,5 +1,5 @@
-import { makeStyles } from "@mui/styles";
-import { colors } from "../../utils/colors";
+import { makeStyles } from '@mui/styles';
+import { colors } from '../../utils/colors';
 export const generalStyles = makeStyles((theme) => ({
   row: {
     paddingTop: 5,
@@ -15,16 +15,22 @@ export const generalStyles = makeStyles((theme) => ({
   },
   rowBlack: {
     backgroundColor: colors.BLACKDARKMODE,
-    color: "#fff",
+    color: '#fff',
   },
   rowDarkGrey: {
     backgroundColor: colors.GREYDARKMODE,
-    color: "#fff",
+    color: '#fff',
   },
   rowText: {
-    textAlign: "left",
+    textAlign: 'left',
   },
   rowNumber: {
-    textAlign: "center",
+    textAlign: 'center',
+  },
+  font10: {
+    fontSize: 10,
+  },
+  font13: {
+    fontSize: 13,
   },
 }));

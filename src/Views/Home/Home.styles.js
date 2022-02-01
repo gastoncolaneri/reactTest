@@ -1,13 +1,5 @@
-import { makeStyles } from "@mui/styles";
-import { colors } from "../../utils/colors";
+import { makeStyles } from '@mui/styles';
 export const generalStyles = makeStyles((theme) => ({
-  "& .MuiSwitch-switchBase": {
-    "&.Mui-checked": {
-      color: "#fff",
-
-      "& + .MuiSwitch-track": {
-        backgroundColor: "#65C466",
-      },
-    },
-  },
+  ml20: { marginLeft: 20 },
+  ml1: { marginLeft: 1 },
 }));

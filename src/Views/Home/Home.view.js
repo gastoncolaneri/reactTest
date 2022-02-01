@@ -1,45 +1,56 @@
-import React, { useState } from "react";
-import Switch from "@mui/material/Switch";
-import Table from "../../Components/Table/Table.component";
-import { Grid } from "@mui/material";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { generalStyles } from "./Home.styles";
-import CustomSwitcher from "../../Components/CustomSwitcher/CustomSwitcher.component";
+import React, { useState } from 'react';
+import Switch from '@mui/material/Switch';
+import Table from '../../Components/Table/Table.component';
+import { Grid } from '@mui/material';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { generalStyles } from './Home.styles';
+import { colors } from '../../utils/colors';
+import Dimensions from '../../utils/dimensions';
 
 export default function Home() {
   const styles = generalStyles();
   const [checked, setChecked] = useState(true);
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-    console.log(checked);
-  };
+  const { width } = Dimensions();
 
   return (
-    <Grid style={{ flex: 1, backgroundColor: checked ? "#fff" : "#181818" }}>
+    <Grid
+      style={{
+        backgroundColor: !checked ? '#fff' : '#181818',
+        padding: width < 400 ? 5 : 10,
+        flex: 1,
+      }}
+    >
       <Switch
         checked={checked}
         onChange={() => setChecked(!checked)}
         size="medium"
-        className={styles.switcher}
-        color={"warning"}
+        className={`${width < 700 ? styles.ml1 : styles.ml20}`}
+        sx={{
+          overflow: 'visible',
+          width: 50,
+          height: 18,
+          padding: 0,
+          marginBottom: 2,
+        }}
+        color={'warning'}
         icon={
           <DarkModeIcon
             style={{
-              color: "#fff",
-              marginTop: -8,
+              color: colors.GREYDARKMODE,
+              marginTop: -17,
               fontSize: 35,
-              marginRight: 20,
+              marginLeft: -20,
             }}
           />
         }
         checkedIcon={
           <WbSunnyIcon
             style={{
-              color: "#faad35",
-              marginTop: -8,
+              color: '#faad35',
+              marginTop: -16,
               fontSize: 35,
-              marginRight: 20,
+              marginLeft: 0,
             }}
           />
         }

@@ -1,19 +1,22 @@
-import { Grid } from "@mui/material";
-import React, { useEffect } from "react";
-import { generalStyles } from "./Row.styles";
+import { Grid } from '@mui/material';
+import React, { useEffect } from 'react';
+import { generalStyles } from './Row.styles';
+import Dimensions from '../../utils/dimensions';
+
 export default function Row(props) {
   const styles = generalStyles();
   const { data, index, switcher } = props;
+  const { width } = Dimensions();
 
   return (
     <>
       <Grid
         item
         className={`${
-          index % 2 == 0
-            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
-            : [switcher ? styles.rowGrey : styles.rowBlack]
-        } ${styles.row} ${styles.rowText}`}
+          index % 2 === 0
+            ? [!switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [!switcher ? styles.rowGrey : styles.rowBlack]
+        } ${styles.row} ${styles.rowText} ${width < 600 && styles.font10}`}
         xs={2}
       >
         {data.name}
@@ -21,10 +24,12 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          index % 2 == 0
-            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
-            : [switcher ? styles.rowGrey : styles.rowBlack]
-        } ${styles.row} ${styles.rowText}`}
+          index % 2 === 0
+            ? [!switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [!switcher ? styles.rowGrey : styles.rowBlack]
+        } ${styles.row} ${styles.rowText} ${
+          width < 600 ? styles.font10 : styles.font13
+        }`}
         xs={2}
       >
         {data.family}
@@ -32,21 +37,25 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          index % 2 == 0
-            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
-            : [switcher ? styles.rowGrey : styles.rowBlack]
-        } ${styles.row} ${styles.rowNumber}`}
+          index % 2 === 0
+            ? [!switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [!switcher ? styles.rowGrey : styles.rowBlack]
+        } ${styles.row} ${styles.rowNumber} ${
+          width < 600 ? styles.font10 : styles.font13
+        }`}
         xs={2}
       >
-        {data.nutritions.carbohydrates}
+        {data.nutritions.fat}
       </Grid>
       <Grid
         item
         className={`${
-          index % 2 == 0
-            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
-            : [switcher ? styles.rowGrey : styles.rowBlack]
-        } ${styles.row} ${styles.rowNumber}`}
+          index % 2 === 0
+            ? [!switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [!switcher ? styles.rowGrey : styles.rowBlack]
+        } ${styles.row} ${styles.rowNumber} ${
+          width < 600 ? styles.font10 : styles.font13
+        }`}
         xs={2}
       >
         {data.nutritions.protein}
@@ -54,10 +63,12 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          index % 2 == 0
-            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
-            : [switcher ? styles.rowGrey : styles.rowBlack]
-        } ${styles.row} ${styles.rowNumber}`}
+          index % 2 === 0
+            ? [!switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [!switcher ? styles.rowGrey : styles.rowBlack]
+        } ${styles.row} ${styles.rowNumber} ${
+          width < 600 ? styles.font10 : styles.font13
+        }`}
         xs={2}
       >
         {data.nutritions.calories}
@@ -65,10 +76,12 @@ export default function Row(props) {
       <Grid
         item
         className={`${
-          index % 2 == 0
-            ? [switcher ? styles.rowWhite : styles.rowDarkGrey]
-            : [switcher ? styles.rowGrey : styles.rowBlack]
-        } ${styles.row} ${styles.rowNumber}`}
+          index % 2 === 0
+            ? [!switcher ? styles.rowWhite : styles.rowDarkGrey]
+            : [!switcher ? styles.rowGrey : styles.rowBlack]
+        } ${styles.row} ${styles.rowNumber} ${
+          width < 600 ? styles.font10 : styles.font13
+        }`}
         xs={2}
       >
         {data.nutritions.sugar}
