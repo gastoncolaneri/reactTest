@@ -1,14 +1,9 @@
 import React from 'react';
-import { Grid } from '@mui/material';
 import TextRow from './TextRow/TextRow.component';
-import { generalStyles } from './Rows.styles';
-import Dimensions from '../../utils/dimensions';
 import NumberRow from './NumberRow/NumberRow.component';
 
 export default function Row(props) {
-  const styles = generalStyles();
   const { data, index, switcher } = props;
-  const { width } = Dimensions();
 
   return (
     <>
