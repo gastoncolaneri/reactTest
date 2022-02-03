@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/reactTest/static/js/main.d7fec9d5.js",
+    "static/media/logo.png": "/reactTest/static/media/logo.ea331768dc40063d9b5a.png",
+    "index.html": "/reactTest/index.html",
+    "main.d7fec9d5.js.map": "/reactTest/static/js/main.d7fec9d5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d7fec9d5.js"
+  ]
+}
